@@ -13,10 +13,10 @@ parts:
       - file: technical_overview
       - file: deployment_notes
   - caption: Embedding Other Environment Types
-    chapter:
+    chapters:
       - file: embedding_webr
   - caption: '"Micro" Embedded Enviromments and Applications'
-    chapter:
+    chapters:
       - file: thebe-executable-code-blocks
       - file: wasm-applications
 
