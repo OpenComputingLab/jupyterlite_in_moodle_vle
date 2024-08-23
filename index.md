@@ -4,7 +4,7 @@ Jupyter notebooks are used in a growing number of Open Univeristy (OU) modules t
 
 This document describes how Jupyter notebooks can be delivered to students within the context of the OU VLE and without the need for an external server using `JupyterLite`.
 
-As well as resource reduction benefit, running Jupyter environments purely in the browser opens up the possibility of making interactive programming environments published via `learn7` available to students in secure enviroments.
+As well as providing a resource reduction benefit, running Jupyter environments purely in the browser opens up the possibility of making interactive programming environments published via `learn7` available to students in secure enviroments.
 
 ![Jupyter notebook embedded in VLE URL asset/resource page](images/example_embedded_notebook.png)
 
