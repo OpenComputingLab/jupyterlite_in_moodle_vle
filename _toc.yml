@@ -1,0 +1,22 @@
+format: jb-book
+root: index
+parts:
+  - caption: Motivation
+    chapters:
+      - file: motivation
+  - caption: Example Use Cases
+    chapters:
+      - file: embedding_a_notebook
+      - file: embedding_jupyterlab
+  - caption: Development and Installation Notes
+    chapters:
+      - file: technical_overview
+      - file: deployment_notes
+  - caption: Embedding Other Environment Types
+    chapter:
+      - file: embedding_webr
+  - caption: '"Micro" Embedded Enviromments and Applications'
+    chapter:
+      - file: thebe-executable-code-blocks
+      - file: wasm-applications
+
