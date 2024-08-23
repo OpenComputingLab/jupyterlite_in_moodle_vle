@@ -4,6 +4,8 @@ Jupyter notebooks provide a means of distributing rich, editable documents to st
 
 First presented to students in an OU module in 2016, they are now being used in an increasing number of computing, maths and science based modules, with the potential to also support computational activities across the whole university curriculum.
 
+However, making such environments available to students in secure enviroments presents certain challenges, given restrictions on software installation and access to unapproved websites.
+
 Jupyter notebooks are accessed via a web-based user interface, with increasing support from other editor applications such as VS Code, Rstudio/Posit. The necessary software can either be self-installed by students, or accessed from an OU hosted service. Typically, Jupyter environments are made available to students:
 
 - via virtual computing environments (VCEs) on OU hosted servers (for example, Computer Home/[OpenComputing Lab (OCL)](https://docs.ocl.open.ac.uk/container-launcher/user/));
