@@ -348,6 +348,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borkedness">BORKEDNESS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-issues">OPEN ISSUES</a></li>
 </ul>
             </nav>
         </div>
@@ -592,6 +593,19 @@ jupyterlab-filesystem-access==0.6.0
 <li><p>JupyterLite now seems to drop explicit reference to <code class="docutils literal notranslate"><span class="pre">index.html</span></code> from the notebook homepage toc links; which breaks the VLE handler and means we can’t open notebooks from the notebook index / ToC homepage.</p></li>
 </ul>
 <p>Issues in JupyterLab:</p>
+<ul class="simple">
+<li><p>N/A</p></li>
+</ul>
+</section>
+<section id="open-issues">
+<h2>OPEN ISSUES<a class="headerlink" href="#open-issues" title="Link to this heading">#</a></h2>
+<p>For distribution into secure enviromments, <em>everything</em> will need to be bundled into an <code class="docutils literal notranslate"><span class="pre">html5.zip</span></code> bundle.</p>
+<p>To explore:</p>
+<ul class="simple">
+<li><p>use something like <code class="docutils literal notranslate"><span class="pre">esbuild</span></code> to bundle all assets into a js bundle <em>(I have no experience as yet with bundling web resources…)</em>; this will include the need to bundle third party packages and their dependencies as well as wasm packages. (Serving wasm packages may require mime-type settings updates on the VLE..)</p></li>
+<li><p>for M348, which uses the jupyerlite-webr kernel, I need to find a way of bundling required packages, as well as the webt base package, into the jupyterlite distribition.</p></li>
+</ul>
+<p><em>If anyone can help with any of the above, please email me: <code class="docutils literal notranslate"><span class="pre">tony.hirst&#64;open.ac.uk</span></code>.</em></p>
 </section>
 </section>
 
@@ -665,6 +679,7 @@ jupyterlab-filesystem-access==0.6.0
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borkedness">BORKEDNESS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-issues">OPEN ISSUES</a></li>
 </ul>
   </nav></div>
 
