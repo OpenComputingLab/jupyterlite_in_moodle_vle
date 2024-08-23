@@ -1,6 +1,6 @@
 # Embedding Standalone Jupyter Environments in the OU Moodle VLE
 
-Jupyter notebooks are used in a growing number of Open Univeristy (OU) modules to provide an interactive environment for delivering richly formatted teaching and learning materials that also support the execution of provided or student-generated computer code. Notebook environments are typically made available to students via the OU hosted OpenComnputing Lab service, or self-installed and run locally on student's own computers.
+Jupyter notebooks are used in a growing number of Open Univeristy (OU) modules to provide an interactive environment for delivering richly formatted teaching and learning materials that also support the execution of provided or student-generated computer code. Notebook environments are typically made available to students via the OU hosted OpenComputing Lab service, or self-installed and run locally on students' own computers.
 
 This document describes how Jupyter notebooks can be delivered to students within the context of the OU VLE and without the need for an external server using `JupyterLite`.
 

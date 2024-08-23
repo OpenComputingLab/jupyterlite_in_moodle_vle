@@ -245,3 +245,16 @@ Issues in notebooks:
 
 Issues in JupyterLab:
 
+- N/A
+
+## OPEN ISSUES
+
+For distribution into secure enviromments, *everything* will need to be bundled into an `html5.zip` bundle.
+
+To explore:
+
+- use something like `esbuild` to bundle all assets into a js bundle *(I have no experience as yet with bundling web resources...)*; this will include the need to bundle third party packages and their dependencies as well as wasm packages. (Serving wasm packages may require mime-type settings updates on the VLE..)
+
+- for M348, which uses the jupyerlite-webr kernel, I need to find a way of bundling required packages, as well as the webt base package, into the jupyterlite distribition.
+
+*If anyone can help with any of the above, please email me: `tony.hirst@open.ac.uk`.*
