@@ -6,7 +6,7 @@ First presented to students in an OU module in 2016, they are now being used in 
 
 However, making such environments available to students in secure enviroments presents certain challenges, given restrictions on software installation and access to unapproved websites.
 
-Jupyter notebooks are accessed via a web-based user interface, with increasing support from other editor applications such as VS Code, Rstudio/Posit. The necessary software can either be self-installed by students, or accessed from an OU hosted service. Typically, Jupyter environments are made available to students:
+Jupyter notebooks are accessed via a web-based user interface, with increasing support from other editor applications such as VS Code, RStudio/Posit. The necessary software can either be self-installed by students, or accessed from an OU hosted service. Typically, Jupyter environments are made available to students:
 
 - via virtual computing environments (VCEs) on OU hosted servers (for example, Computer Home/[OpenComputing Lab (OCL)](https://docs.ocl.open.ac.uk/container-launcher/user/));
 - via locally run VCEs on students' own computers (e.g. using [Docker Desktop](https://docs.docker.com/desktop/));
@@ -52,6 +52,4 @@ The ability to include rich HTML content in Jupyter notebooks allows us to prese
 
 This rather begs the question as to why we might want to make use of the tightly or weakly coupled approaches described in the previous section — what benefits do we get from presenting materials via the VLE?
 
-That question is perhaps best answered elsewhere, but it does raise another question: what benefits might we realise by being able to embed Jupyter notebook activities directly within VLE presented materials? And how might we go about embedding Jupyter activities directly within the VLE.
-
-## 
+That question is perhaps best answered elsewhere, but it does raise another question: what benefits might we realise by being able to embed Jupyter notebook activities directly within VLE presented materials? And how might we go about embedding Jupyter activities directly within the VLE?
