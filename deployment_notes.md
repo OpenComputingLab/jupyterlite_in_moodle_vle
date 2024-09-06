@@ -255,6 +255,9 @@ To explore:
 
 - use something like `esbuild` to bundle all assets into a js bundle *(I have no experience as yet with bundling web resources...)*; this will include the need to bundle third party packages and their dependencies as well as wasm packages. (Serving wasm packages may require mime-type settings updates on the VLE..)
 
-- for M348, which uses the jupyerlite-webr kernel, I need to find a way of bundling required packages, as well as the webt base package, into the jupyterlite distribition.
+- for M348, which uses the jupyerlite-webr kernel, we need to bundle required packages, as well as the webR base package, into the jupyterlite distribution.
+  - example of creating custom built webR packages: https://github.com/ouseful-testing/webr-package-repo-demo/ ; note that we need to match the R version with the R kernel version; in jupyterlite r kernel, this currently lags the main webR r version; the built packages can be downloaded as workload assets the placed where there need to be;
+  - we can set the package download path in an R notebook code cell: `options(webr_pkg_repos= "https://ouseful-demos.github.io/jupyterlite-m348-demo/repo/")`;
+  - also also need to fix the path to the `webr` wasm packages; this can be done from a [custom build](https://github.com/ouseful-testing/jupyterlite-webr-kernel/tree/th-custom-path) of the `jupyterlite-webr-kernel` by setting the path in build config files as per [here]().
 
-*If anyone can help with any of the above, please email me: `tony.hirst@open.ac.uk`.*
+*If anyone wants to team up exploring any of the above, please email me: `tony.hirst@open.ac.uk`.*

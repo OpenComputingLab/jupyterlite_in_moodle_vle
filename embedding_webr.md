@@ -1,3 +1,3 @@
 # Embedding WebR
 
-*TO DO - notes on bindling and embedding the `WebR` user interface.*
+*TO DO - notes on bundling and embedding the `WebR` user interface.*

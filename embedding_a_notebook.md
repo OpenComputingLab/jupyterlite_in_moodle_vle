@@ -6,7 +6,7 @@ Notebooks can be individually referenced via the `notebooks/index.html?path=NOTE
 
 ![Jupyter notebook embedded in VLE URL asset/resource page](images/example_embedded_notebook.png)
 
-In terms of learning design, embedding a notebook within a VLE page allows us to maitain a flow of activity from VLE based web content directly into an interactive activity. This allows students to:
+In terms of learning material design, embedding a notebook within a VLE page allows us to maitain a flow of activity from VLE based web content directly into an interactive activity. This allows students to:
 
 - run code, either as presented, or modified or created by them, inline in the context of the surrounf materials;
 - make notes in markdown cells inline in the materials.

@@ -24,7 +24,7 @@ In choosing which deployment route to use, Module Teams should consider:
 
 ## Using Jupyter Notebooks to Support OU Teaching and Learning
 
-Typically, students work inside a Jupyter environment that sits "outside" the VLE context. In terms of learning design, Jupyter notebooks have tended to be used to provide teaching and learning materials that are complementary to, but separate from, materials that are presented through the VLE.
+Typically, students work inside a Jupyter environment that sits "outside" the VLE context. In terms of learning material design, Jupyter notebooks have tended to be used to provide teaching and learning materials that are complementary to, but separate from, materials that are presented through the VLE.
 
 ```{admonition} Jupyter Notebooks in TM351
 In *TM351 Data Management and Analysis*, student workload is split in eqwual measure across "conceptual" teaching materials presented via the VLE, and practical activities presented via Jupyter notebooks.
