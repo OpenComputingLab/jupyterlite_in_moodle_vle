@@ -23,6 +23,8 @@ function stripUriParameters() {
     url.searchParams.set('path', path);
   }
   window.history.replaceState({}, '', url);
+  //That actually trashes the page history.
+  // May be better to use: window.history.pushState({}, '', url.toString());
 }
 
 // Then in first line of function main():
