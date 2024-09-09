@@ -11,7 +11,7 @@ Currently, we need some hacks to the jupyerlite distribtuion when bundling it fo
 
 - filenames only allow [a-zA-Z-_]; so e.g. spaces in e.g. notebook filenames throw an error;
 - the `index.html` pages in `lab/`, `tree/` and `notebooks/` need updating: `<link rel="manifest" href="/app.webmanifest" /> ` needs to be set to `<link rel="manifest" href="/app.webmanifest" crossorigin="use-credentials" />` to handle the auth;
-- the html5zip is referenced in an iframe with a load of URL paramters added to it by the vle'; this prevents the automatic redirect to eg `lab/index.html`; solution (h/t Claude.ai) is to strip the URL of unwanted params (note that this currently breaks the history/back button for the corresponding browser tab):
+- the html5zip is referenced in an iframe with a load of URL paramters added to it by the vle'; this prevents the automatic redirect to eg `lab/index.html`; solution (h/t Claude.ai) is to strip the URL of unwanted params (note that this currently breaks the history/back button for the corresponding browser tab). In the `lab/index.html` file, (also `tree/index.html` or `notebooks/index.html` etc.) clean the URL first; in the VLE, should then be able to point to `lab/index.html` as a URL resource (open in embedded iframe):
 
 ```javascript
 function stripUriParameters() {
@@ -30,7 +30,7 @@ function stripUriParameters() {
 ```
 
 - to create the zip, we need an `index.html` at the root of the zip folder;  where a jupyterlite distribution asset is created by a GitHub action, unzip and untar the Jupyerlite asset uploaded by the action, `cd` into it and then (after any mods e.g. to `index.html` files), zip  the directory as root into a `.zip` archive file, e.g. `zip -r ../jupyterlite-dist-tm112.zip .`. If zipping a git tracked dir, add `--exclude "*.git*"` to the zip command to ignore git files.
-- to get the html5 bundle URL, view the associated page; right click on the iframe and view it in a separate window to get the URL, or in browser dev tools, inspect page in to find the associated iframe and its `src` value.
+- to get the html5 bundle URL, upload the html5.zip as an HTML5.zip resource type; view the associated page; the JupyterLite environment is in the embedded iframe but gets stuck on the `./index.html` page; right click on the iframe (which will be blank ) and view it in a separate window to get the URL of the embedded html5 content; or, in browser dev tools, inspect page in to find the associated iframe and its `src` value. Take this path and extend it to point to eg `lab/index.html` rather than `./index.html`; you should now be able to use this link as an embedded URL link to display the lab environment in a Moodle page.
 
 ## Example JupyterLite Xeus Python distribution
 
