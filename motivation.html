@@ -344,13 +344,25 @@
 <p>Jupyter notebooks provide a means of distributing rich, editable documents to students that can also run provided or student generated code in a variety of languages as well as displaying code outputs.</p>
 <p>First presented to students in an OU module in 2016, they are now being used in an increasing number of computing, maths and science based modules, with the potential to also support computational activities across the whole university curriculum.</p>
 <p>However, making such environments available to students in secure enviroments presents certain challenges, given restrictions on software installation and access to unapproved websites.</p>
-<p>Jupyter notebooks are accessed via a web-based user interface, with increasing support from other editor applications such as VS Code, RStudio/Posit. The necessary software can either be self-installed by students, or accessed from an OU hosted service. Typically, Jupyter environments are made available to students:</p>
+<p>Jupyter notebooks are accessed via a web-based user interface, with increasing support from other editor applications such as VS Code, RStudio/Posit.</p>
+<p>Although the Jupyter user interface is typically accessed via a web browser, there are two important considerations:</p>
+<ul class="simple">
+<li><p>where is the user interface published from?</p></li>
+<li><p>where is the code edited the user interface actually executed?</p></li>
+</ul>
+<p>Typically, both those considerations are handled by a Jupyter server running either on the student’s own computer using self-installed software, or on a remotely hosted serve. Typically, Jupyter environments are made available to students:</p>
 <ul class="simple">
 <li><p>via virtual computing environments (VCEs) on OU hosted servers (for example, Computer Home/<a class="reference external" href="https://docs.ocl.open.ac.uk/container-launcher/user/">OpenComputing Lab (OCL)</a>);</p></li>
 <li><p>via locally run VCEs on students’ own computers (e.g. using <a class="reference external" href="https://docs.docker.com/desktop/">Docker Desktop</a>);</p></li>
 <li><p>via local Anaconda/Python installations on students’ own computers.</p></li>
 </ul>
 <p>In each case, the Jupyter environment is accessed via a web browser.</p>
+<p>However, there is an interesting new possibility of serving the Jupyter interface files from a simple, static (non-interactive) webserver (for example, as a Moodle VLE HTML activity) and then executing code <em>within the browser itself</em> using an application known as JupyterLite. The main advantages of JupyerLite are:</p>
+<ol class="arabic simple">
+<li><p>it runs in the browser, so no installation is required by students;</p></li>
+<li><p>it runs in the browser, so the OU does not need to provide a hosted computing service;</p></li>
+<li><p>it can be saved as a progressive web app with all required files cached within the browser, which means students should be able to work with it offline.</p></li>
+</ol>
 <p>In choosing which deployment route to use, Module Teams should consider:</p>
 <ul class="simple">
 <li><p>distribution and installation issues when installing software on students’ own computers;</p></li>

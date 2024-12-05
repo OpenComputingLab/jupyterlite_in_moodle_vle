@@ -325,9 +325,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-deployment-repositories">Example deployment repositories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m348-jupyterlite-webr-kernel-webr-kernel-repo-r-package-repo">M348 JupyterLite (<code class="docutils literal notranslate"><span class="pre">WebR</span></code> kernel) + WebR kernel repo, R package repo)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tm112-block-2-notebooks-xeus-python-kernel">TM112 Block 2 notebooks (<code class="docutils literal notranslate"><span class="pre">xeus-python</span></code> kernel)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-deployment-repositories">Example deployment repositories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m348-jupyterlite-webr-kernel-webr-kernel-repo-r-package-repo">M348 JupyterLite (<code class="docutils literal notranslate"><span class="pre">WebR</span></code> kernel) + WebR kernel repo, R package repo)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tm112-block-2-notebooks-xeus-python-kernel">TM112 Block 2 notebooks (<code class="docutils literal notranslate"><span class="pre">xeus-python</span></code> kernel)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bundling-for-ou-vle">BUNDLING FOR OU VLE</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-jupyterlite-xeus-python-distribution">Example JupyterLite Xeus Python distribution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-jupyterlite-r-distribution">Example JupyterLite R distribution</a></li>
@@ -358,19 +360,19 @@
 <section id="example-deployment-repositories">
 <h2>Example deployment repositories<a class="headerlink" href="#example-deployment-repositories" title="Link to this heading">#</a></h2>
 <p>Example GitHub repositories that build the html5.zip packages using GitHub Axctions, and then make the artefacts available as build job artefacts. <code class="docutils literal notranslate"><span class="pre">[TO</span> <span class="pre">DO</span> <span class="pre">-</span> <span class="pre">also</span> <span class="pre">push</span> <span class="pre">the</span> <span class="pre">build</span> <span class="pre">package</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">repo</span> <span class="pre">somewhere.]</span></code></p>
-</section>
 <section id="m348-jupyterlite-webr-kernel-webr-kernel-repo-r-package-repo">
-<h2>M348 JupyterLite (<code class="docutils literal notranslate"><span class="pre">WebR</span></code> kernel) + WebR kernel repo, R package repo)<a class="headerlink" href="#m348-jupyterlite-webr-kernel-webr-kernel-repo-r-package-repo" title="Link to this heading">#</a></h2>
+<h3>M348 JupyterLite (<code class="docutils literal notranslate"><span class="pre">WebR</span></code> kernel) + WebR kernel repo, R package repo)<a class="headerlink" href="#m348-jupyterlite-webr-kernel-webr-kernel-repo-r-package-repo" title="Link to this heading">#</a></h3>
 <p>The JupyterLite distribution is built using an action in <a class="reference external" href="https://github.com/ouseful-testing/jupyterlite-webr-kernel"><code class="docutils literal notranslate"><span class="pre">ouseful-testing/jupyterlite-webr-kernel</span></code></a>; this constructs a custom web Jupyterlite kernel and then creates a JupyterLite distribution that makes use of it. The zipped distribution is uploaded as an action artefact and can be uploaded to Moodle as an HTML5.zip package.</p>
 <p>The jupyterlite-webr-kernel builds a self-contained web distribution with package and webr files distributed alongside the jupyterlite environment; the R packages are currently custom built in the <a class="reference external" href="https://github.com/ouseful-testing/webr-package-repo-demo"><code class="docutils literal notranslate"><span class="pre">ouseful-testing/webr-package-repo-demo</span></code></a> repo and then placed in the webr-package-repo-demo repo packages_wasmbuilt directory.</p>
 <p>A desktop runnable bundled executable version is built using <a class="reference external" href="https://github.com/ouseful-testing/m348-jupyterlite-distro"><code class="docutils literal notranslate"><span class="pre">ouseful-testing/m348-jupyterlite-distro</span></code></a> and uploaded as the Action artefact <code class="docutils literal notranslate"><span class="pre">m348-jupyterlite-html5zip-distribution.zip</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">TO</span> <span class="pre">DO</span> <span class="pre">-</span> <span class="pre">produce</span> <span class="pre">a</span> <span class="pre">set</span> <span class="pre">of</span> <span class="pre">build</span> <span class="pre">actions</span> <span class="pre">that</span> <span class="pre">can</span> <span class="pre">work</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">repo</span></code></p>
 </section>
 <section id="tm112-block-2-notebooks-xeus-python-kernel">
-<h2>TM112 Block 2 notebooks (<code class="docutils literal notranslate"><span class="pre">xeus-python</span></code> kernel)<a class="headerlink" href="#tm112-block-2-notebooks-xeus-python-kernel" title="Link to this heading">#</a></h2>
+<h3>TM112 Block 2 notebooks (<code class="docutils literal notranslate"><span class="pre">xeus-python</span></code> kernel)<a class="headerlink" href="#tm112-block-2-notebooks-xeus-python-kernel" title="Link to this heading">#</a></h3>
 <p>Repo: <a class="reference external" href="https://github.com/ouseful-demos/jupyterlite-tm112-demo"><code class="docutils literal notranslate"><span class="pre">ouseful-demos/jupyterlite-tm112-demo</span></code></a></p>
 <p>A Github Action builds the HTML5.zip artefact.</p>
 <p>The file upladed as the Action artfect (<code class="docutils literal notranslate"><span class="pre">tm112-jupyterlite-html5zip-distribution.zip</span></code>) is the file that should be uploadable to Moodle as an HTML5.zip package.</p>
+</section>
 </section>
 <section id="bundling-for-ou-vle">
 <h2>BUNDLING FOR OU VLE<a class="headerlink" href="#bundling-for-ou-vle" title="Link to this heading">#</a></h2>
@@ -713,9 +715,11 @@ jupyterlab-filesystem-access==0.6.0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-deployment-repositories">Example deployment repositories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m348-jupyterlite-webr-kernel-webr-kernel-repo-r-package-repo">M348 JupyterLite (<code class="docutils literal notranslate"><span class="pre">WebR</span></code> kernel) + WebR kernel repo, R package repo)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tm112-block-2-notebooks-xeus-python-kernel">TM112 Block 2 notebooks (<code class="docutils literal notranslate"><span class="pre">xeus-python</span></code> kernel)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-deployment-repositories">Example deployment repositories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m348-jupyterlite-webr-kernel-webr-kernel-repo-r-package-repo">M348 JupyterLite (<code class="docutils literal notranslate"><span class="pre">WebR</span></code> kernel) + WebR kernel repo, R package repo)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tm112-block-2-notebooks-xeus-python-kernel">TM112 Block 2 notebooks (<code class="docutils literal notranslate"><span class="pre">xeus-python</span></code> kernel)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bundling-for-ou-vle">BUNDLING FOR OU VLE</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-jupyterlite-xeus-python-distribution">Example JupyterLite Xeus Python distribution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-jupyterlite-r-distribution">Example JupyterLite R distribution</a></li>
