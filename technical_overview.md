@@ -12,4 +12,4 @@ Files including notebooks can be shipped as part of the distribution. Updates ma
 
 JupyterLite can be "installed" into a browser as a progressive web app, supporting offline use.
 
-A JupyerLite distribution can also be bundled with a simple webserver using `pyinstaller` and then distributed as a 
+A JupyerLite distribution can also be bundled with a simple webserver using `pyinstaller` and then distributed as a simple, self-contained, executable file (e.g. a `.exe` file on Windows); this *does not* install files anywhere, just runs from where it is).

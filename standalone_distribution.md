@@ -18,6 +18,6 @@ The WebR kernel loads all its packages from a WebR repository on demand. However
 
 ## Packaging a Standalone Desktop Distribution
 
-Using a tool such as `pyinstaller`, we can easily create standalone, cross-platform executables that bundle a JupyterLite site with a simple webserver such as `flask`. This executable then contains all it needs in order to serve JupyterLite locally. Load the local URL into your browser, and then use the site as required, saving notebooks into local storage, or moiunting them into the browser using the [`jupyterlab-filesystem-access](https://jupyterlite.readthedocs.io/en/latest/howto/content/filesystem-access.html) extension.
+Using a tool such as `pyinstaller`, we can easily create standalone, cross-platform executables that bundle a JupyterLite site with a simple webserver such as `flask`. This executable then contains all it needs in order to serve JupyterLite locally. Load the local URL into your browser, and then use the site as required, saving notebooks into local storage, or mounting them into the browser using the [`jupyterlab-filesystem-access](https://jupyterlite.readthedocs.io/en/latest/howto/content/filesystem-access.html) extension.
 
 If our local webserver serves files from a local directory, we can also add notebooks to that directory and then read them into JupyterLite from the local URL used to serve the notebook contents of the local directory.

@@ -24,7 +24,7 @@ For the settings, set the `height` and `width` to `*`.
 
 ![Creating an HTML5 package - height and width set *, availability "show on course page" ](images/html5settings.png)
 
-*It might make sense to also tick the `Full window` checkbox?
+*It might make sense to also tick the `Full window` checkbox?*
 
 Where notebooks are bundled into the JupyterLite distribution, the JupyterLab or Jupyter notebook environment can be launched with a pre-opened notebook by setting `lab/index.html?path=NOTEBOOK.ipynb` in the URL path. If the [`jupyterlab-open-url-parameter`](https://github.com/jupyterlab-contrib/jupyterlab-open-url-parameter) extension is installed, notebooks can also be opened from a URL by setting one or more `&fromURL=NOTEBOOKURL` URL parameters.
 
