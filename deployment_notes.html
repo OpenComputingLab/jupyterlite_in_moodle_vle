@@ -325,6 +325,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-deployment-repositories">Example deployment repositories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m348-jupyterlite-webr-kernel-webr-kernel-repo-r-package-repo">M348 JupyterLite (<code class="docutils literal notranslate"><span class="pre">WebR</span></code> kernel) + WebR kernel repo, R package repo)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tm112-block-2-notebooks-xeus-python-kernel">TM112 Block 2 notebooks (<code class="docutils literal notranslate"><span class="pre">xeus-python</span></code> kernel)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bundling-for-ou-vle">BUNDLING FOR OU VLE</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-jupyterlite-xeus-python-distribution">Example JupyterLite Xeus Python distribution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-jupyterlite-r-distribution">Example JupyterLite R distribution</a></li>
@@ -352,13 +355,30 @@
 <li><p>link to a URL of the JupyterLite site running on a public URL;</p></li>
 <li><p>upload the modded JupyterLite site as an <code class="docutils literal notranslate"><span class="pre">HTML5.zip</span></code> activity bundle;</p></li>
 </ul>
+<section id="example-deployment-repositories">
+<h2>Example deployment repositories<a class="headerlink" href="#example-deployment-repositories" title="Link to this heading">#</a></h2>
+<p>Example GitHub repositories that build the html5.zip packages using GitHub Axctions, and then make the artefacts available as build job artefacts. <code class="docutils literal notranslate"><span class="pre">[TO</span> <span class="pre">DO</span> <span class="pre">-</span> <span class="pre">also</span> <span class="pre">push</span> <span class="pre">the</span> <span class="pre">build</span> <span class="pre">package</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">repo</span> <span class="pre">somewhere.]</span></code></p>
+</section>
+<section id="m348-jupyterlite-webr-kernel-webr-kernel-repo-r-package-repo">
+<h2>M348 JupyterLite (<code class="docutils literal notranslate"><span class="pre">WebR</span></code> kernel) + WebR kernel repo, R package repo)<a class="headerlink" href="#m348-jupyterlite-webr-kernel-webr-kernel-repo-r-package-repo" title="Link to this heading">#</a></h2>
+<p>The JupyterLite distribution is built using an action in <a class="reference external" href="https://github.com/ouseful-testing/jupyterlite-webr-kernel"><code class="docutils literal notranslate"><span class="pre">ouseful-testing/jupyterlite-webr-kernel</span></code></a>; this constructs a custom web Jupyterlite kernel and then creates a JupyterLite distribution that makes use of it. The zipped distribution is uploaded as an action artefact and can be uploaded to Moodle as an HTML5.zip package.</p>
+<p>The jupyterlite-webr-kernel builds a self-contained web distribution with package and webr files distributed alongside the jupyterlite environment; the R packages are currently custom built in the <a class="reference external" href="https://github.com/ouseful-testing/webr-package-repo-demo"><code class="docutils literal notranslate"><span class="pre">ouseful-testing/webr-package-repo-demo</span></code></a> repo and then placed in the webr-package-repo-demo repo packages_wasmbuilt directory.</p>
+<p>A desktop runnable bundled executable version is built using <a class="reference external" href="https://github.com/ouseful-testing/m348-jupyterlite-distro"><code class="docutils literal notranslate"><span class="pre">ouseful-testing/m348-jupyterlite-distro</span></code></a> and uploaded as the Action artefact <code class="docutils literal notranslate"><span class="pre">m348-jupyterlite-html5zip-distribution.zip</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">TO</span> <span class="pre">DO</span> <span class="pre">-</span> <span class="pre">produce</span> <span class="pre">a</span> <span class="pre">set</span> <span class="pre">of</span> <span class="pre">build</span> <span class="pre">actions</span> <span class="pre">that</span> <span class="pre">can</span> <span class="pre">work</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">repo</span></code></p>
+</section>
+<section id="tm112-block-2-notebooks-xeus-python-kernel">
+<h2>TM112 Block 2 notebooks (<code class="docutils literal notranslate"><span class="pre">xeus-python</span></code> kernel)<a class="headerlink" href="#tm112-block-2-notebooks-xeus-python-kernel" title="Link to this heading">#</a></h2>
+<p>Repo: <a class="reference external" href="https://github.com/ouseful-demos/jupyterlite-tm112-demo"><code class="docutils literal notranslate"><span class="pre">ouseful-demos/jupyterlite-tm112-demo</span></code></a></p>
+<p>A Github Action builds the HTML5.zip artefact.</p>
+<p>The file upladed as the Action artfect (<code class="docutils literal notranslate"><span class="pre">tm112-jupyterlite-html5zip-distribution.zip</span></code>) is the file that should be uploadable to Moodle as an HTML5.zip package.</p>
+</section>
 <section id="bundling-for-ou-vle">
 <h2>BUNDLING FOR OU VLE<a class="headerlink" href="#bundling-for-ou-vle" title="Link to this heading">#</a></h2>
 <p>Currently, we need some hacks to the jupyterlite distribtuion when bundling it for OU VLE / HTML5.zip:</p>
 <ul class="simple">
 <li><p>filenames only allow [a-zA-Z-_]; so e.g. spaces in e.g. notebook filenames throw an error;</p></li>
 <li><p>the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> pages in <code class="docutils literal notranslate"><span class="pre">lab/</span></code>, <code class="docutils literal notranslate"><span class="pre">tree/</span></code> and <code class="docutils literal notranslate"><span class="pre">notebooks/</span></code> need updating: <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;manifest&quot;</span> <span class="pre">href=&quot;/app.webmanifest&quot;</span> <span class="pre">/&gt;</span> </code> needs to be set to <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;manifest&quot;</span> <span class="pre">href=&quot;/app.webmanifest&quot;</span> <span class="pre">crossorigin=&quot;use-credentials&quot;</span> <span class="pre">/&gt;</span></code> to handle the auth; NOTE: in more recent JupyterLite builds, the path seems to be to <code class="docutils literal notranslate"><span class="pre">../app.webmanifest</span></code>; the following should replace it: <code class="docutils literal notranslate"><span class="pre">sed</span> <span class="pre">-i</span> <span class="pre">'s|&lt;link</span> <span class="pre">rel=&quot;manifest&quot;</span> <span class="pre">href=&quot;\([^&quot;]*\)&quot;</span> <span class="pre">/&gt;|&lt;link</span> <span class="pre">rel=&quot;manifest&quot;</span> <span class="pre">href=&quot;\1&quot;</span> <span class="pre">crossorigin=&quot;use-credentials&quot;</span> <span class="pre">/&gt;|'</span> <span class="pre">./static/lab/index.html</span></code> (on Mac, we need <code class="docutils literal notranslate"><span class="pre">sed</span> <span class="pre">-i</span> <span class="pre">'.bak'</span> <span class="pre">...</span></code> (requires <code class="docutils literal notranslate"><span class="pre">''</span></code> (no backup) or a backup filename suffix, such as <code class="docutils literal notranslate"><span class="pre">.bak</span></code>)); <a class="reference external" href="https://github.com/jupyterlite/jupyterlite/pull/1357">related open PR on JupyterLite repo</a>;</p></li>
-<li><p>the html5zip is referenced in an iframe with a load of URL paramters added to it by the vle’; this prevents the automatic redirect to eg <code class="docutils literal notranslate"><span class="pre">lab/index.html</span></code>; solution (h/t <a class="reference external" href="http://Claude.ai">Claude.ai</a>) is to strip the URL of unwanted params (note that this currently breaks the history/back button for the corresponding browser tab). We need to clean the URL of unwanted parameters. One fix is to modify <code class="docutils literal notranslate"><span class="pre">./config-utils.js</span></code> as follows (a copy of the required updated file can be found <a class="reference external" href="https://github.com/OpenComputingLab/jupyterlite_in_moodle_vle/tree/main/resources">here</a>) :</p></li>
+<li><p>the html5zip is referenced in an iframe with a load of URL parameters added to it by the VLE; this prevents the automatic redirect to eg <code class="docutils literal notranslate"><span class="pre">lab/index.html</span></code>; solution (h/t <a class="reference external" href="http://Claude.ai">Claude.ai</a>) is to strip the URL of unwanted params (note that this currently breaks the history/back button for the corresponding browser tab). We need to clean the URL of unwanted parameters. One fix is to modify <code class="docutils literal notranslate"><span class="pre">./config-utils.js</span></code> as follows (a copy of the required updated file can be found <a class="reference external" href="https://github.com/OpenComputingLab/jupyterlite_in_moodle_vle/tree/main/resources">here</a>) :</p></li>
 </ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Add this function</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">stripUriParameters</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -379,12 +399,29 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>to create the zip, we need an <code class="docutils literal notranslate"><span class="pre">index.html</span></code> at the root of the zip folder;  where a jupyterlite distribution asset is created by a GitHub action, unzip and untar the Jupyterlite asset uploaded by the action, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into it and then (after any mods e.g. to <code class="docutils literal notranslate"><span class="pre">index.html</span></code> files), zip  the directory as root into a <code class="docutils literal notranslate"><span class="pre">.zip</span></code> archive file, e.g. <code class="docutils literal notranslate"><span class="pre">zip</span> <span class="pre">-r</span> <span class="pre">../jupyterlite-dist-tm112.zip</span> <span class="pre">.</span></code>. If zipping a git tracked dir, add <code class="docutils literal notranslate"><span class="pre">--exclude</span> <span class="pre">&quot;*.git*&quot;</span></code> to the zip command to ignore git files.</p></li>
+<li><p>to create the zip, we need an <code class="docutils literal notranslate"><span class="pre">index.html</span></code> at the root of the zip folder; wheree a JupyterLite distribution asset is created by a GitHub action as qa zip file, unzip and untar the JupyterLite asset uploaded by the action, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into it and then (after any mods e.g. to <code class="docutils literal notranslate"><span class="pre">index.html</span></code> files), zip  the directory as root into a <code class="docutils literal notranslate"><span class="pre">.zip</span></code> archive file, e.g. <code class="docutils literal notranslate"><span class="pre">zip</span> <span class="pre">-r</span> <span class="pre">../jupyterlite-dist-tm112.zip</span> <span class="pre">.</span></code>. If zipping a git tracked dir, add <code class="docutils literal notranslate"><span class="pre">--exclude</span> <span class="pre">&quot;*.git*&quot;</span></code> to the zip command to ignore git files. Alternatively, a Github action can be used to zip the contents of the distribution directory and create an uploaded artefact that can be downloaded as then uploaded to Moodle VLE as an htmlzip in the appropriate form:</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the following, the JupyerLite output directory</span>
+<span class="c1"># is set to: dist-tm112-jupyterlite</span>
+<span class="c1"># E.g. using the build caommand:</span>
+<span class="c1"># jupyter lite build --contents content --output-dir dist-tm112-jupyterlite</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upload JupyterLite site artifact</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-artifact@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tm112-jupyterlite-html5zip-distribution</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">dist-tm112-jupyterlite/</span>
+<span class="w">            </span><span class="no">!.git</span>
+<span class="w">            </span><span class="no">!.git/**</span>
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>to get the html5 bundle URL, upload the html5.zip as an HTML5.zip resource type; view the associated page; the JupyterLite environment is in the embedded iframe but gets stuck on the <code class="docutils literal notranslate"><span class="pre">./index.html</span></code> page; right click on the iframe (which will be blank ) and view it in a separate window to get the URL of the embedded html5 content; or, in browser dev tools, inspect page in to find the associated iframe and its <code class="docutils literal notranslate"><span class="pre">src</span></code> value. Take this path and extend it to point to eg <code class="docutils literal notranslate"><span class="pre">lab/index.html</span></code> rather than <code class="docutils literal notranslate"><span class="pre">./index.html</span></code>; you should now be able to use this link as an embedded URL link to display the lab environment in a Moodle page.</p></li>
 </ul>
 </section>
 <section id="example-jupyterlite-xeus-python-distribution">
 <h2>Example JupyterLite Xeus Python distribution<a class="headerlink" href="#example-jupyterlite-xeus-python-distribution" title="Link to this heading">#</a></h2>
+<p>In a Xeus Pyhton distribution, we can “preinstall” any packages required by notebooks into the kernel.</p>
 <p>Example <code class="docutils literal notranslate"><span class="pre">build_environment.yml</span></code>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xeus-kernels</span>
 <span class="nt">channels</span><span class="p">:</span>
@@ -399,7 +436,7 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jupyterlite-xeus&gt;=0.2.0a0,&lt;0.3</span>
 </pre></div>
 </div>
-<p>Example <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>:</p>
+<p>Example <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> - build the following packages into the JupyterLite kernel:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xeus-python-kernel</span>
 <span class="nt">channels</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://repo.mamba.pm/emscripten-forge</span>
@@ -416,7 +453,7 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipython-magic-folium</span>
 </pre></div>
 </div>
-<p>We can also add a separate <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> eg for extensions to the JupyterLite environment.</p>
+<p>We can also add a separate <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> to bundle and install extensions in the JupyterLite application.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Core modules (mandatory)
 jupyterlite-core
 jupyterlab
@@ -597,7 +634,7 @@ jupyterlab-filesystem-access==0.6.0
 </ul>
 <p>Issues in JupyterLab:</p>
 <ul class="simple">
-<li><p>N/A</p></li>
+<li><p>notebooks are behaving erratically on scroll; <code class="docutils literal notranslate"><span class="pre">jupyterlab-myst</span></code> may be contributing to this, or they may be a deeper seated Jupyter UI issue.</p></li>
 </ul>
 </section>
 <section id="open-issues">
@@ -676,6 +713,9 @@ jupyterlab-filesystem-access==0.6.0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-deployment-repositories">Example deployment repositories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m348-jupyterlite-webr-kernel-webr-kernel-repo-r-package-repo">M348 JupyterLite (<code class="docutils literal notranslate"><span class="pre">WebR</span></code> kernel) + WebR kernel repo, R package repo)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tm112-block-2-notebooks-xeus-python-kernel">TM112 Block 2 notebooks (<code class="docutils literal notranslate"><span class="pre">xeus-python</span></code> kernel)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bundling-for-ou-vle">BUNDLING FOR OU VLE</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-jupyterlite-xeus-python-distribution">Example JupyterLite Xeus Python distribution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-jupyterlite-r-distribution">Example JupyterLite R distribution</a></li>
