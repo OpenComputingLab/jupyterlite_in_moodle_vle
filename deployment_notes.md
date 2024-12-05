@@ -8,7 +8,7 @@ JupyterLite environments can be deployed via the VLE in two main ways:
 ## Example deployment repositories
 
 Example GitHub repositories that build the html5.zip packages using GitHub Axctions, and then make the artefacts available as build job artefacts. `[TO DO - also push the build package to the repo somewhere.]`
-## M348 JupyterLite (`WebR` kernel) + WebR kernel repo, R package repo)
+### M348 JupyterLite (`WebR` kernel) + WebR kernel repo, R package repo)
 
 The JupyterLite distribution is built using an action in [`ouseful-testing/jupyterlite-webr-kernel`](https://github.com/ouseful-testing/jupyterlite-webr-kernel); this constructs a custom web Jupyterlite kernel and then creates a JupyterLite distribution that makes use of it. The zipped distribution is uploaded as an action artefact and can be uploaded to Moodle as an HTML5.zip package.
 
@@ -18,7 +18,7 @@ A desktop runnable bundled executable version is built using [`ouseful-testing/m
 
 `TO DO - produce a set of build actions that can work in a single repo`
 
-## TM112 Block 2 notebooks (`xeus-python` kernel)
+### TM112 Block 2 notebooks (`xeus-python` kernel)
 
 Repo: [`ouseful-demos/jupyterlite-tm112-demo`](https://github.com/ouseful-demos/jupyterlite-tm112-demo)
 
