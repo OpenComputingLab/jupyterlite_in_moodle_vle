@@ -42,11 +42,15 @@ In choosing which deployment route to use, Module Teams should consider:
 Typically, students work inside a Jupyter environment that sits "outside" the VLE context. In terms of learning material design, Jupyter notebooks have tended to be used to provide teaching and learning materials that are complementary to, but separate from, materials that are presented through the VLE.
 
 ```{admonition} Jupyter Notebooks in TM351
-In *TM351 Data Management and Analysis*, student workload is split in eqwual measure across "conceptual" teaching materials presented via the VLE, and practical activities presented via Jupyter notebooks.
+In *TM351 Data Management and Analysis*, student workload is split in eqwual measure across "conceptual" teaching materials presented via the VLE, and practical activities presented via Jupyter notebooks. THe Jupyter environment is delivered either via the OU hosted *Open Computing Lab*, or on students' own computers via a provided Docker container. Notebooks run Python code and can be used to access various database services bundled into the provided computing environment.
 ```
 
 ```{admonition} Jupyter Notebooks in TM112
 In *TM112 Introduction to computing and information technology 2*, teaching and learning materials are primarily distributted through print media. The majority of practical activities use a simple Python distribution installed directly onto students' own computers, but a small collection of optional activities are provided using Jupyter notebooks. The notebooks are accessed either from the OU hosted OpenComputing Lab, locally on a student's own computer using a Docker container, or solely in the browser using a JupyterLite environment served from a public GiHub Pages hosted website.
+```
+
+```{admonition} Jupyter Notebooks in M348
+An increasing number of modules in Maths and Science now make use of Jupyter notebooks to deliver computational activities. M348 uses notebooks run against an R kernel to perform a wide range of statistical analyses and generate a wide range statistical charts based on provided datasets. The ability to render maths formulae written in LaTeX in notebook markdown cells also means formulae can be rendered using a mathematical notation in explanatory, rather than computational, parts of the notebooks.
 ```
 
 ## Notebook Activity Design Considerations
