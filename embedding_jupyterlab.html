@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'embedding_jupyterlab';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Technical Overview" href="technical_overview.html" />
-    <link rel="prev" title="Embedding a Single Notebook" href="embedding_a_notebook.html" />
+    <link rel="next" title="Embedding a Single Notebook" href="embedding_a_notebook.html" />
+    <link rel="prev" title="Motivation and Rationale" href="motivation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -168,8 +168,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Use Cases</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="embedding_a_notebook.html">Embedding a Single Notebook</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Embedding JupyterLab and Jupyter Notebook in Moodle VLE Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_a_notebook.html">Embedding a Single Notebook</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Development and Installation Notes</span></p>
 <ul class="nav bd-sidenav">
@@ -302,7 +302,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -318,6 +320,14 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-the-html5-zip-asset">Uploading the HTML5.zip asset</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -330,6 +340,14 @@
   <section class="tex2jax_ignore mathjax_ignore" id="embedding-jupyterlab-and-jupyter-notebook-in-moodle-vle-pages">
 <h1>Embedding JupyterLab and Jupyter Notebook in Moodle VLE Pages<a class="headerlink" href="#embedding-jupyterlab-and-jupyter-notebook-in-moodle-vle-pages" title="Link to this heading">#</a></h1>
 <p>A browser based JupyterLab enviroment can be embedded into a Moodle VLE page as an embedded URL, or bundled into an <code class="docutils literal notranslate"><span class="pre">HTML5.zip</span></code> activity that can either be rendered in an <code class="docutils literal notranslate"><span class="pre">HTML5</span></code> activity page, or embedded in a page rendered from OU-XML.</p>
+<section id="uploading-the-html5-zip-asset">
+<h2>Uploading the HTML5.zip asset<a class="headerlink" href="#uploading-the-html5-zip-asset" title="Link to this heading">#</a></h2>
+<p>In a Moodle VLE course home page, enable editing settings:</p>
+<p><img alt="Enable edits in Moodle course" src="_images/moodle_enable_edit.png" /></p>
+<p>In a section, click to <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">an</span> <span class="pre">activity</span> <span class="pre">or</span> <span class="pre">resource</span></code>:</p>
+<p><img alt="Click to &quot;Add an activity or resource&quot;" src="_images/moodle_click_add_activity.png" /></p>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">HTML</span> <span class="pre">activity</span></code> type:</p>
+<p><img alt="Panel of new activity options - select &quot;HTML activity&quot;" src="_images/moodle-add-html5-resource.png" /></p>
 <p>Give the page a sensible name and ID:</p>
 <p><img alt="Creating an HTML5 package - initial settings" src="_images/html5upload.png" /></p>
 <p>For the settings, set the <code class="docutils literal notranslate"><span class="pre">height</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code> to <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
@@ -337,6 +355,7 @@
 <p>*It might make sense to also tick the <code class="docutils literal notranslate"><span class="pre">Full</span> <span class="pre">window</span></code> checkbox?</p>
 <p>Where notebooks are bundled into the JupyterLite distribution, the JupyterLab or Jupyter notebook environment can be launched with a pre-opened notebook by setting <code class="docutils literal notranslate"><span class="pre">lab/index.html?path=NOTEBOOK.ipynb</span></code> in the URL path. If the <a class="reference external" href="https://github.com/jupyterlab-contrib/jupyterlab-open-url-parameter"><code class="docutils literal notranslate"><span class="pre">jupyterlab-open-url-parameter</span></code></a> extension is installed, notebooks can also be opened from a URL by setting one or more <code class="docutils literal notranslate"><span class="pre">&amp;fromURL=NOTEBOOKURL</span></code> URL parameters.</p>
 <p><img alt="JupyterLab UI in embedded page" src="_images/example_embedded_jupyterlab.png" /></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -370,20 +389,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="embedding_a_notebook.html"
+       href="motivation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Embedding a Single Notebook</p>
+        <p class="prev-next-title">Motivation and Rationale</p>
       </div>
     </a>
     <a class="right-next"
-       href="technical_overview.html"
+       href="embedding_a_notebook.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Technical Overview</p>
+        <p class="prev-next-title">Embedding a Single Notebook</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -393,6 +412,22 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-the-html5-zip-asset">Uploading the HTML5.zip asset</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
