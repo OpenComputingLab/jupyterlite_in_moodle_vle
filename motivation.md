@@ -6,13 +6,28 @@ First presented to students in an OU module in 2016, they are now being used in 
 
 However, making such environments available to students in secure enviroments presents certain challenges, given restrictions on software installation and access to unapproved websites.
 
-Jupyter notebooks are accessed via a web-based user interface, with increasing support from other editor applications such as VS Code, RStudio/Posit. The necessary software can either be self-installed by students, or accessed from an OU hosted service. Typically, Jupyter environments are made available to students:
+Jupyter notebooks are accessed via a web-based user interface, with increasing support from other editor applications such as VS Code, RStudio/Posit.
+
+Although the Jupyter user interface is typically accessed via a web browser, there are two important considerations:
+
+- where is the user interface published from?
+- where is the code edited the user interface actually executed?
+
+Typically, both those considerations are handled by a Jupyter server running either on the student's own computer using self-installed software, or on a remotely hosted serve. Typically, Jupyter environments are made available to students:
 
 - via virtual computing environments (VCEs) on OU hosted servers (for example, Computer Home/[OpenComputing Lab (OCL)](https://docs.ocl.open.ac.uk/container-launcher/user/));
 - via locally run VCEs on students' own computers (e.g. using [Docker Desktop](https://docs.docker.com/desktop/));
 - via local Anaconda/Python installations on students' own computers.
 
 In each case, the Jupyter environment is accessed via a web browser.
+
+However, there is an interesting new possibility of serving the Jupyter interface files from a simple, static (non-interactive) webserver (for example, as a Moodle VLE HTML activity) and then executing code *within the browser itself* using an application known as JupyterLite. The main advantages of JupyerLite are:
+
+1) it runs in the browser, so no installation is required by students;
+
+2) it runs in the browser, so the OU does not need to provide a hosted computing service;
+
+3) it can be saved as a progressive web app with all required files cached within the browser, which means students should be able to work with it offline. 
 
 In choosing which deployment route to use, Module Teams should consider:
 
