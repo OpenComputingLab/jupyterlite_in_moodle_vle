@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'deployment_notes';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Embedding WebR" href="embedding_webr.html" />
+    <link rel="next" title="Building Standalone Distributions" href="standalone_distribution.html" />
     <link rel="prev" title="Technical Overview" href="technical_overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,15 +169,17 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Use Cases</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="embedding_a_notebook.html">Embedding a Single Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding_jupyterlab.html">Embedding JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_jupyterlab.html">Embedding JupyterLab and Jupyter Notebook in Moodle VLE Pages</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Development and Installation Notes</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="technical_overview.html">Technical Overview</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Deployment Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standalone_distribution.html">Building Standalone Distributions</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Embedding Other Environment Types</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuring Programming Language Kernels</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="custom_xeus_python.html">Creating Customised Xeus Python Kernels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="embedding_webr.html">Embedding WebR</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">"Micro" Embedded Enviromments and Applications</span></p>
@@ -355,7 +357,7 @@
 <p>Currently, we need some hacks to the jupyterlite distribtuion when bundling it for OU VLE / HTML5.zip:</p>
 <ul class="simple">
 <li><p>filenames only allow [a-zA-Z-_]; so e.g. spaces in e.g. notebook filenames throw an error;</p></li>
-<li><p>the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> pages in <code class="docutils literal notranslate"><span class="pre">lab/</span></code>, <code class="docutils literal notranslate"><span class="pre">tree/</span></code> and <code class="docutils literal notranslate"><span class="pre">notebooks/</span></code> need updating: <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;manifest&quot;</span> <span class="pre">href=&quot;/app.webmanifest&quot;</span> <span class="pre">/&gt;</span> </code> needs to be set to <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;manifest&quot;</span> <span class="pre">href=&quot;/app.webmanifest&quot;</span> <span class="pre">crossorigin=&quot;use-credentials&quot;</span> <span class="pre">/&gt;</span></code> to handle the auth; NOTE: in more recent JupyterLite builds, the path seems to be to <code class="docutils literal notranslate"><span class="pre">../app.webmanifest</span></code>; the following should replace it: <code class="docutils literal notranslate"><span class="pre">sed</span> <span class="pre">-i</span> <span class="pre">'.bak'</span> <span class="pre">'s|&lt;link</span> <span class="pre">rel=&quot;manifest&quot;</span> <span class="pre">href=&quot;\([^&quot;]*\)&quot;</span> <span class="pre">/&gt;|&lt;link</span> <span class="pre">rel=&quot;manifest&quot;</span> <span class="pre">href=&quot;\1&quot;</span> <span class="pre">crossorigin=&quot;use-credentials&quot;</span> <span class="pre">/&gt;|'</span> <span class="pre">./static/lab/index.html</span></code> (on Mac, we need <code class="docutils literal notranslate"><span class="pre">sed</span> <span class="pre">-i</span> <span class="pre">'.bak'</span> <span class="pre">...</span></code> (requires <code class="docutils literal notranslate"><span class="pre">''</span></code> (no backup) or a backup filename suffix, such as <code class="docutils literal notranslate"><span class="pre">.bak</span></code>));</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> pages in <code class="docutils literal notranslate"><span class="pre">lab/</span></code>, <code class="docutils literal notranslate"><span class="pre">tree/</span></code> and <code class="docutils literal notranslate"><span class="pre">notebooks/</span></code> need updating: <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;manifest&quot;</span> <span class="pre">href=&quot;/app.webmanifest&quot;</span> <span class="pre">/&gt;</span> </code> needs to be set to <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;manifest&quot;</span> <span class="pre">href=&quot;/app.webmanifest&quot;</span> <span class="pre">crossorigin=&quot;use-credentials&quot;</span> <span class="pre">/&gt;</span></code> to handle the auth; NOTE: in more recent JupyterLite builds, the path seems to be to <code class="docutils literal notranslate"><span class="pre">../app.webmanifest</span></code>; the following should replace it: <code class="docutils literal notranslate"><span class="pre">sed</span> <span class="pre">-i</span> <span class="pre">'s|&lt;link</span> <span class="pre">rel=&quot;manifest&quot;</span> <span class="pre">href=&quot;\([^&quot;]*\)&quot;</span> <span class="pre">/&gt;|&lt;link</span> <span class="pre">rel=&quot;manifest&quot;</span> <span class="pre">href=&quot;\1&quot;</span> <span class="pre">crossorigin=&quot;use-credentials&quot;</span> <span class="pre">/&gt;|'</span> <span class="pre">./static/lab/index.html</span></code> (on Mac, we need <code class="docutils literal notranslate"><span class="pre">sed</span> <span class="pre">-i</span> <span class="pre">'.bak'</span> <span class="pre">...</span></code> (requires <code class="docutils literal notranslate"><span class="pre">''</span></code> (no backup) or a backup filename suffix, such as <code class="docutils literal notranslate"><span class="pre">.bak</span></code>)); <a class="reference external" href="https://github.com/jupyterlite/jupyterlite/pull/1357">related open PR on JupyterLite repo</a>;</p></li>
 <li><p>the html5zip is referenced in an iframe with a load of URL paramters added to it by the vle’; this prevents the automatic redirect to eg <code class="docutils literal notranslate"><span class="pre">lab/index.html</span></code>; solution (h/t <a class="reference external" href="http://Claude.ai">Claude.ai</a>) is to strip the URL of unwanted params (note that this currently breaks the history/back button for the corresponding browser tab). We need to clean the URL of unwanted parameters. One fix is to modify <code class="docutils literal notranslate"><span class="pre">./config-utils.js</span></code> as follows (a copy of the required updated file can be found <a class="reference external" href="https://github.com/OpenComputingLab/jupyterlite_in_moodle_vle/tree/main/resources">here</a>) :</p></li>
 </ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Add this function</span>
@@ -649,11 +651,11 @@ jupyterlab-filesystem-access==0.6.0
       </div>
     </a>
     <a class="right-next"
-       href="embedding_webr.html"
+       href="standalone_distribution.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Embedding WebR</p>
+        <p class="prev-next-title">Building Standalone Distributions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

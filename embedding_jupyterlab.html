@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Embedding JupyterLab &#8212; JupyterLite on OU Moodle VLE</title>
+    <title>Embedding JupyterLab and Jupyter Notebook in Moodle VLE Pages &#8212; JupyterLite on OU Moodle VLE</title>
   
   
   
@@ -169,15 +169,17 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Use Cases</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="embedding_a_notebook.html">Embedding a Single Notebook</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Embedding JupyterLab</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Embedding JupyterLab and Jupyter Notebook in Moodle VLE Pages</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Development and Installation Notes</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="technical_overview.html">Technical Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deployment_notes.html">Deployment Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standalone_distribution.html">Building Standalone Distributions</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Embedding Other Environment Types</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuring Programming Language Kernels</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="custom_xeus_python.html">Creating Customised Xeus Python Kernels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="embedding_webr.html">Embedding WebR</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">"Micro" Embedded Enviromments and Applications</span></p>
@@ -311,7 +313,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Embedding JupyterLab</h1>
+    <h1>Embedding JupyterLab and Jupyter Notebook in Moodle VLE Pages</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -325,10 +327,15 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="embedding-jupyterlab">
-<h1>Embedding JupyterLab<a class="headerlink" href="#embedding-jupyterlab" title="Link to this heading">#</a></h1>
-<p>A browser based JupyterLab enviroment can be embedded within VLE URL activity/resource pages, or bundled into an <code class="docutils literal notranslate"><span class="pre">HTML5.zip</span></code> activity that can be rendered in an <code class="docutils literal notranslate"><span class="pre">HTML5</span></code> activity page, or embedded in a “website” page (e.g. as rendered from OU-XML).</p>
-<p>The JupytherLab environment can be launched with a pre-opened notebook by setting a <code class="docutils literal notranslate"><span class="pre">lab/index.html?path=NOTEBOOK.ipynb</span></code> path.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="embedding-jupyterlab-and-jupyter-notebook-in-moodle-vle-pages">
+<h1>Embedding JupyterLab and Jupyter Notebook in Moodle VLE Pages<a class="headerlink" href="#embedding-jupyterlab-and-jupyter-notebook-in-moodle-vle-pages" title="Link to this heading">#</a></h1>
+<p>A browser based JupyterLab enviroment can be embedded into a Moodle VLE page as an embedded URL, or bundled into an <code class="docutils literal notranslate"><span class="pre">HTML5.zip</span></code> activity that can either be rendered in an <code class="docutils literal notranslate"><span class="pre">HTML5</span></code> activity page, or embedded in a page rendered from OU-XML.</p>
+<p>Give the page a sensible name and ID:</p>
+<p><img alt="Creating an HTML5 package - initial settings" src="_images/html5upload.png" /></p>
+<p>For the settings, set the <code class="docutils literal notranslate"><span class="pre">height</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code> to <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<p><img alt="Creating an HTML5 package - height and width set *, availability &quot;show on course page&quot; " src="_images/html5settings.png" /></p>
+<p>*It might make sense to also tick the <code class="docutils literal notranslate"><span class="pre">Full</span> <span class="pre">window</span></code> checkbox?</p>
+<p>Where notebooks are bundled into the JupyterLite distribution, the JupyterLab or Jupyter notebook environment can be launched with a pre-opened notebook by setting <code class="docutils literal notranslate"><span class="pre">lab/index.html?path=NOTEBOOK.ipynb</span></code> in the URL path. If the <a class="reference external" href="https://github.com/jupyterlab-contrib/jupyterlab-open-url-parameter"><code class="docutils literal notranslate"><span class="pre">jupyterlab-open-url-parameter</span></code></a> extension is installed, notebooks can also be opened from a URL by setting one or more <code class="docutils literal notranslate"><span class="pre">&amp;fromURL=NOTEBOOKURL</span></code> URL parameters.</p>
 <p><img alt="JupyterLab UI in embedded page" src="_images/example_embedded_jupyterlab.png" /></p>
 </section>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Motivation and Rationale &#8212; JupyterLite on OU Moodle VLE</title>
+    <title>Building Standalone Distributions &#8212; JupyterLite on OU Moodle VLE</title>
   
   
   
@@ -60,11 +60,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'motivation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'standalone_distribution';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Embedding a Single Notebook" href="embedding_a_notebook.html" />
-    <link rel="prev" title="Embedding Standalone Jupyter Environments in the OU Moodle VLE" href="index.html" />
+    <link rel="next" title="Creating Customised Xeus Python Kernels" href="custom_xeus_python.html" />
+    <link rel="prev" title="Deployment Notes" href="deployment_notes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -163,8 +163,8 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Motivation</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Motivation and Rationale</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation and Rationale</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Use Cases</span></p>
 <ul class="nav bd-sidenav">
@@ -172,10 +172,10 @@
 <li class="toctree-l1"><a class="reference internal" href="embedding_jupyterlab.html">Embedding JupyterLab and Jupyter Notebook in Moodle VLE Pages</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Development and Installation Notes</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="technical_overview.html">Technical Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deployment_notes.html">Deployment Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="standalone_distribution.html">Building Standalone Distributions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Building Standalone Distributions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Configuring Programming Language Kernels</span></p>
 <ul class="nav bd-sidenav">
@@ -315,7 +315,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Motivation and Rationale</h1>
+    <h1>Building Standalone Distributions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -325,9 +325,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-jupyter-notebooks-to-support-ou-teaching-and-learning">Using Jupyter Notebooks to Support OU Teaching and Learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-activity-design-considerations">Notebook Activity Design Considerations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-practical-notebook-activities-in-the-vle">Embedding Practical Notebook Activities in the VLE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-self-contained-jupyterlite-kernels">Building Self-Contained JupyterLite Kernels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packaging-a-standalone-desktop-distribution">Packaging a Standalone Desktop Distribution</a></li>
 </ul>
             </nav>
         </div>
@@ -339,52 +338,22 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="motivation-and-rationale">
-<h1>Motivation and Rationale<a class="headerlink" href="#motivation-and-rationale" title="Link to this heading">#</a></h1>
-<p>Jupyter notebooks provide a means of distributing rich, editable documents to students that can also run provided or student generated code in a variety of languages as well as displaying code outputs.</p>
-<p>First presented to students in an OU module in 2016, they are now being used in an increasing number of computing, maths and science based modules, with the potential to also support computational activities across the whole university curriculum.</p>
-<p>However, making such environments available to students in secure enviroments presents certain challenges, given restrictions on software installation and access to unapproved websites.</p>
-<p>Jupyter notebooks are accessed via a web-based user interface, with increasing support from other editor applications such as VS Code, RStudio/Posit. The necessary software can either be self-installed by students, or accessed from an OU hosted service. Typically, Jupyter environments are made available to students:</p>
-<ul class="simple">
-<li><p>via virtual computing environments (VCEs) on OU hosted servers (for example, Computer Home/<a class="reference external" href="https://docs.ocl.open.ac.uk/container-launcher/user/">OpenComputing Lab (OCL)</a>);</p></li>
-<li><p>via locally run VCEs on students’ own computers (e.g. using <a class="reference external" href="https://docs.docker.com/desktop/">Docker Desktop</a>);</p></li>
-<li><p>via local Anaconda/Python installations on students’ own computers.</p></li>
-</ul>
-<p>In each case, the Jupyter environment is accessed via a web browser.</p>
-<p>In choosing which deployment route to use, Module Teams should consider:</p>
-<ul class="simple">
-<li><p>distribution and installation issues when installing software on students’ own computers;</p></li>
-<li><p>resource costs (e.g. server hosting costs, network bandwidth costs, file storage costs, system administration and support costs);</p></li>
-<li><p>user experience issues, from managing files that have been modified or created by the students (<em>“can I keep copies of my edited files?”</em>), to computing resource requirements (<em>“can I physically run this on my own computer, and remove it when I’m done?”</em>), and to the availability of a network connection (<em>“can I work offline or do I need to be online?”</em>).</p></li>
-</ul>
-<p><em>See also: <a class="reference external" href="https://blog.ouseful.info/2019/03/20/fragment-some-rambling-thoughts-on-computing-environments-in-education/">Fragment — Some Rambling Thoughts on Computing Environments in Education</a>.</em></p>
-<section id="using-jupyter-notebooks-to-support-ou-teaching-and-learning">
-<h2>Using Jupyter Notebooks to Support OU Teaching and Learning<a class="headerlink" href="#using-jupyter-notebooks-to-support-ou-teaching-and-learning" title="Link to this heading">#</a></h2>
-<p>Typically, students work inside a Jupyter environment that sits “outside” the VLE context. In terms of learning material design, Jupyter notebooks have tended to be used to provide teaching and learning materials that are complementary to, but separate from, materials that are presented through the VLE.</p>
-<div class="admonition-jupyter-notebooks-in-tm351 admonition">
-<p class="admonition-title">Jupyter Notebooks in TM351</p>
-<p>In <em>TM351 Data Management and Analysis</em>, student workload is split in eqwual measure across “conceptual” teaching materials presented via the VLE, and practical activities presented via Jupyter notebooks.</p>
-</div>
-<div class="admonition-jupyter-notebooks-in-tm112 admonition">
-<p class="admonition-title">Jupyter Notebooks in TM112</p>
-<p>In <em>TM112 Introduction to computing and information technology 2</em>, teaching and learning materials are primarily distributted through print media. The majority of practical activities use a simple Python distribution installed directly onto students’ own computers, but a small collection of optional activities are provided using Jupyter notebooks. The notebooks are accessed either from the OU hosted OpenComputing Lab, locally on a student’s own computer using a Docker container, or solely in the browser using a JupyterLite environment served from a public GiHub Pages hosted website.</p>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="building-standalone-distributions">
+<h1>Building Standalone Distributions<a class="headerlink" href="#building-standalone-distributions" title="Link to this heading">#</a></h1>
+<p>The JupyterLite application can be distributed simply as a set of standalone static website files and published as if it were a simple static website. If all the files required to run the JupyterLite environment are bundled as part of the JupyterLite distribution in the nornal JupyerLite build process, the applcation can be served from a single domain, without the need to make http requests to any other website.</p>
+<p>A JuptyerLite site can also be bundled with a simple webserver and distributed as a simple self-contained desktop application (for example, a single Windows <code class="docutils literal notranslate"><span class="pre">.exe</span></code> file distributed via DVD-ROM or USB memory stick). This application can run on a desktop without the need for any other software to be installed, and without any requirement for a network connection.</p>
+<p><em>For the OU module M348 (24J presentation), we are currently exploring the use of a simple .exe file distribution for use by students in secure environments.</em></p>
+<section id="building-self-contained-jupyterlite-kernels">
+<h2>Building Self-Contained JupyterLite Kernels<a class="headerlink" href="#building-self-contained-jupyterlite-kernels" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyodide</span></code> Python kernel that is shipped by default in many JuoyterLite distributions provides a core Python with a wide range of additional scientific programming Python packages preinstalled.</p>
+<p>The Pyodide kernel will thus be able to run a wide variety of Jupyter notebooks without the need to install any additional packages from remote third party package repositories. However, if the Pyodide kernel <em>does not</em> include a required package, installation of the package from a repository is required. To ship one or more additional packages inside the Pyodide kernel requires a custom build of pyodide that includes those packages.</p>
+<p>The Xeus-Python kernel <em>cannot</em> currently install additional packages at run time. However, additional packages may be installed for use by the Xues-Python at the JupyterLite site build time. If Pyhton package requirments are identified in advance of the publication of the JupyterLite site, the required packages can be built into the deployed Xeus-Python kernel.</p>
+<p>The WebR kernel loads all its packages from a WebR repository on demand. However, if we publish a package repository wihtin the JupyterLite website (that is, rooted on the path we publish JupyteLite to), we can configure the WebR kernel to load the packages from there and make a <em>de facto</em> self-contained distribution.</p>
 </section>
-<section id="notebook-activity-design-considerations">
-<h2>Notebook Activity Design Considerations<a class="headerlink" href="#notebook-activity-design-considerations" title="Link to this heading">#</a></h2>
-<p>The separation of notebooks from other course materials, whether print based or delivered via VLE content pages, forces a particular set of design constraints on notebook based activities.</p>
-<p>There are three mains ways in which notebooks might be used to support teaching and learning in combination with VLE or print material presented conent:</p>
-<ol class="arabic simple">
-<li><p>Tightly coupled: for example, sparsely defined or student generated notebooks that contain bare coding examples. The student is led through the activity by instructions “at the side” presented through print materials or VLE content pages.</p></li>
-<li><p>Weakly coupled: conceptual teaching content is provided via the VLE/print materials, with complementary practical activities presented in the notebooks. The notebooks contain enough instructional material to support the activity as a standalone document but the conceptual teaching is provided elsewhere;</p></li>
-<li><p>Uncoupled / decoupled: all the content is provided in notebooks, with no other supporting materials.</p></li>
-</ol>
-</section>
-<section id="embedding-practical-notebook-activities-in-the-vle">
-<h2>Embedding Practical Notebook Activities in the VLE<a class="headerlink" href="#embedding-practical-notebook-activities-in-the-vle" title="Link to this heading">#</a></h2>
-<p>The ability to include rich HTML content in Jupyter notebooks allows us to present executable code based acitivites that are embedded within text based materials.</p>
-<p>This rather begs the question as to why we might want to make use of the tightly or weakly coupled approaches described in the previous section — what benefits do we get from presenting materials via the VLE?</p>
-<p>That question is perhaps best answered elsewhere, but it does raise another question: what benefits might we realise by being able to embed Jupyter notebook activities directly within VLE presented materials? And how might we go about embedding Jupyter activities directly within the VLE?</p>
+<section id="packaging-a-standalone-desktop-distribution">
+<h2>Packaging a Standalone Desktop Distribution<a class="headerlink" href="#packaging-a-standalone-desktop-distribution" title="Link to this heading">#</a></h2>
+<p>Using a tool such as <code class="docutils literal notranslate"><span class="pre">pyinstaller</span></code>, we can easily create standalone, cross-platform executables that bundle a JupyterLite site with a simple webserver such as <code class="docutils literal notranslate"><span class="pre">flask</span></code>. This executable then contains all it needs in order to serve JupyterLite locally. Load the local URL into your browser, and then use the site as required, saving notebooks into local storage, or moiunting them into the browser using the <a class="reference external" href="https://jupyterlite.readthedocs.io/en/latest/howto/content/filesystem-access.html">`jupyterlab-filesystem-access</a> extension.</p>
+<p>If our local webserver serves files from a local directory, we can also add notebooks to that directory and then read them into JupyterLite from the local URL used to serve the notebook contents of the local directory.</p>
 </section>
 </section>
 
@@ -419,20 +388,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="deployment_notes.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Embedding Standalone Jupyter Environments in the OU Moodle VLE</p>
+        <p class="prev-next-title">Deployment Notes</p>
       </div>
     </a>
     <a class="right-next"
-       href="embedding_a_notebook.html"
+       href="custom_xeus_python.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Embedding a Single Notebook</p>
+        <p class="prev-next-title">Creating Customised Xeus Python Kernels</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -453,9 +422,8 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-jupyter-notebooks-to-support-ou-teaching-and-learning">Using Jupyter Notebooks to Support OU Teaching and Learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-activity-design-considerations">Notebook Activity Design Considerations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-practical-notebook-activities-in-the-vle">Embedding Practical Notebook Activities in the VLE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-self-contained-jupyterlite-kernels">Building Self-Contained JupyterLite Kernels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packaging-a-standalone-desktop-distribution">Packaging a Standalone Desktop Distribution</a></li>
 </ul>
   </nav></div>
 
