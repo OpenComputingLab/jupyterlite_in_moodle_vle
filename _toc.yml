@@ -12,8 +12,10 @@ parts:
     chapters:
       - file: technical_overview
       - file: deployment_notes
-  - caption: Embedding Other Environment Types
+      - file: standalone_distribution
+  - caption: Configuring Programming Language Kernels
     chapters:
+      - file: custom_xeus_python
       - file: embedding_webr
   - caption: '"Micro" Embedded Enviromments and Applications'
     chapters:

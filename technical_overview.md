@@ -11,3 +11,5 @@ Notebooks can be create and edited and changes saved to browser storage, allowin
 Files including notebooks can be shipped as part of the distribution. Updates made to such notebooks are saved to browser storage; deleting the notebook then resets its state to the originally shipped version.
 
 JupyterLite can be "installed" into a browser as a progressive web app, supporting offline use.
+
+A JupyerLite distribution can also be bundled with a simple webserver using `pyinstaller` and then distributed as a 
