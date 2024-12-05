@@ -6,8 +6,8 @@ parts:
       - file: motivation
   - caption: Example Use Cases
     chapters:
-      - file: embedding_a_notebook
       - file: embedding_jupyterlab
+      - file: embedding_a_notebook
   - caption: Development and Installation Notes
     chapters:
       - file: technical_overview
