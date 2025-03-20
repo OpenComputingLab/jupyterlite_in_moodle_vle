@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=a8e58a58"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -67,7 +64,6 @@
     <link rel="prev" title="Embedding Standalone Jupyter Environments in the OU Moodle VLE" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -83,8 +79,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -92,6 +99,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -99,8 +107,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -116,8 +124,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -147,11 +154,15 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -292,16 +303,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -326,6 +345,12 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-jupyter-notebooks-to-support-ou-teaching-and-learning">Using Jupyter Notebooks to Support OU Teaching and Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-students-in-secure-environments-sise">Supporting Students in Secure Environments (SiSE)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perception-of-risk">Perception of Risk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practicalities-associated-with-working-inside-a-secure-environment">Practicalities Associated With Working Inside a Secure Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-user-guides-for-using-jupyterlite-in-a-secure-environment">Example User Guides for Using JupyterLite in a Secure Environment</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-activity-design-considerations">Notebook Activity Design Considerations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-practical-notebook-activities-in-the-vle">Embedding Practical Notebook Activities in the VLE</a></li>
 </ul>
@@ -350,7 +375,7 @@
 <li><p>where is the user interface published from?</p></li>
 <li><p>where is the code edited the user interface actually executed?</p></li>
 </ul>
-<p>Typically, both those considerations are handled by a Jupyter server running either on the student’s own computer using self-installed software, or on a remotely hosted serve. Typically, Jupyter environments are made available to students:</p>
+<p>Typically, both those considerations are handled by a Jupyter server running either on the student’s own computer using self-installed software, or on a remotely hosted server. Typically, Jupyter environments are made available to students:</p>
 <ul class="simple">
 <li><p>via virtual computing environments (VCEs) on OU hosted servers (for example, Computer Home/<a class="reference external" href="https://docs.ocl.open.ac.uk/container-launcher/user/">OpenComputing Lab (OCL)</a>);</p></li>
 <li><p>via locally run VCEs on students’ own computers (e.g. using <a class="reference external" href="https://docs.docker.com/desktop/">Docker Desktop</a>);</p></li>
@@ -385,6 +410,57 @@
 <p class="admonition-title">Jupyter Notebooks in M348</p>
 <p>An increasing number of modules in Maths and Science now make use of Jupyter notebooks to deliver computational activities. M348 uses notebooks run against an R kernel to perform a wide range of statistical analyses and generate a wide range statistical charts based on provided datasets. The ability to render maths formulae written in LaTeX in notebook markdown cells also means formulae can be rendered using a mathematical notation in explanatory, rather than computational, parts of the notebooks.</p>
 </div>
+</section>
+<section id="supporting-students-in-secure-environments-sise">
+<h2>Supporting Students in Secure Environments (SiSE)<a class="headerlink" href="#supporting-students-in-secure-environments-sise" title="Link to this heading">#</a></h2>
+<p>Providing access to interactive computing activities for students in secure environments presents several additional challenges over and above those associated with the delivery of software based activities to mainstream students:</p>
+<ul class="simple">
+<li><p>limited network access: depending on the SE and each particular student’s personal situation, students may have:</p>
+<ul>
+<li><p>no access to the internet;</p></li>
+<li><p>limited network access (for example, to the OU <code class="docutils literal notranslate"><span class="pre">learn7</span></code> server);</p></li>
+<li><p>full access to the internet, subject to desktop computer management policies, firewall settings, content guards, etc.</p></li>
+</ul>
+</li>
+</ul>
+<p>In addition, the student’s physical access to a computer may be restricted to particular times and durations (for example, depending on when they can gain access to a learning center).</p>
+<ul class="simple">
+<li><p>limited ability to install custom software:</p>
+<ul>
+<li><p>no permissions to install software onto a study computer;</p></li>
+<li><p>limited permissions to run, but not install, executable software packages (<code class="docutils literal notranslate"><span class="pre">.exe</span></code> files, “live” or “portable” applications run from a USB memory stick).</p></li>
+</ul>
+</li>
+</ul>
+<section id="perception-of-risk">
+<h3>Perception of Risk<a class="headerlink" href="#perception-of-risk" title="Link to this heading">#</a></h3>
+<p>When providing students with access to executiable coding environments, there is also the concern that students are not just running applications: <em>they are running environments that allow them <strong>to write and execute code of their own devising</strong></em>. This means there is a perceived increase in risk in terms of:</p>
+<ul class="simple">
+<li><p>can the student gain access to, and/or interact with, things on the local network they shouldn’t normally have access to?</p></li>
+<li><p>can the student gain access to, and/or interact with, things on the wider (external) network they shouldn’t normally have access to?</p></li>
+</ul>
+<p>In short, <em>can the student mount attacks from within the coding environment on other users, services, or machines?</em></p>
+</section>
+<section id="practicalities-associated-with-working-inside-a-secure-environment">
+<h3>Practicalities Associated With Working Inside a Secure Environment<a class="headerlink" href="#practicalities-associated-with-working-inside-a-secure-environment" title="Link to this heading">#</a></h3>
+<p>We might typically assume:</p>
+<ul class="simple">
+<li><p>students are probably working on a Windows computer; <em>we might further assume a low specification computer, and a potentially dated version of Windows;</em></p></li>
+<li><p>students have access to Microsoft Office style tools;</p></li>
+<li><p>students have access to a web browser;</p></li>
+<li><p>firewalls and other forms of network access control limit what a student has access to; <em>if our system can access something it shouldn’t, that is a wider concern for the SE</em>;</p></li>
+<li><p>students are able to read and write common file types to an access controlled persistent file storage area (i.e. they can save their work to their own user account, and open it at a later date); <em>if our system can access something it shouldn’t, that is a wider concern for the SE</em>.</p></li>
+</ul>
+<p>One solution to the above problems is to use a “sandboxed” environment, in which the programming code and the programming environment run “inside” an environment that is isolated from the rest of the operating system.</p>
+</section>
+<section id="example-user-guides-for-using-jupyterlite-in-a-secure-environment">
+<h3>Example User Guides for Using JupyterLite in a Secure Environment<a class="headerlink" href="#example-user-guides-for-using-jupyterlite-in-a-secure-environment" title="Link to this heading">#</a></h3>
+<p>Example user guides:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/OpenComputingLab/jupyterlite_in_moodle_vle/blob/main/guides/M348-JupyterLite-Desktop-Guide.pdf">M348 draft desktop guide, November, 2024 (PDF)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/OpenComputingLab/jupyterlite_in_moodle_vle/blob/main/guides/M348-JupyterLite-Learn7-Guide.pdf">M348 draft guide, November, 2024 (PDF)</a></p></li>
+</ul>
+</section>
 </section>
 <section id="notebook-activity-design-considerations">
 <h2>Notebook Activity Design Considerations<a class="headerlink" href="#notebook-activity-design-considerations" title="Link to this heading">#</a></h2>
@@ -459,8 +535,7 @@
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -470,6 +545,12 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-jupyter-notebooks-to-support-ou-teaching-and-learning">Using Jupyter Notebooks to Support OU Teaching and Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-students-in-secure-environments-sise">Supporting Students in Secure Environments (SiSE)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perception-of-risk">Perception of Risk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practicalities-associated-with-working-inside-a-secure-environment">Practicalities Associated With Working Inside a Secure Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-user-guides-for-using-jupyterlite-in-a-secure-environment">Example User Guides for Using JupyterLite in a Secure Environment</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-activity-design-considerations">Notebook Activity Design Considerations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-practical-notebook-activities-in-the-vle">Embedding Practical Notebook Activities in the VLE</a></li>
 </ul>
@@ -520,8 +601,8 @@ By Tony Hirst
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
