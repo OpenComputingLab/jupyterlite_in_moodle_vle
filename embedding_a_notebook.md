@@ -8,7 +8,7 @@ Notebooks can be individually referenced via the `notebooks/index.html?path=NOTE
 
 In terms of learning material design, embedding a notebook within a VLE page allows us to maintain a flow of activity from VLE based web content directly into an interactive activity. This allows students to:
 
-- run code, either as presented, or modified or created by them, inline in the context of the surrounf materials;
+- run code, either as presented, or modified or created by them, inline in the context of the surrounding materials;
 - make notes in markdown cells inline in the materials.
 
 Changes made to the notebook are saved into browser storage, which means that edits can persist across multiple study sessions if the student uses the same web browser across sessions.

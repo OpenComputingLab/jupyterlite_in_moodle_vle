@@ -12,7 +12,7 @@ The `pyodide` Python kernel that is shipped by default in many JuoyterLite distr
 
 The Pyodide kernel will thus be able to run a wide variety of Jupyter notebooks without the need to install any additional packages from remote third party package repositories. However, if the Pyodide kernel *does not* include a required package, installation of the package from a repository is required. To ship one or more additional packages inside the Pyodide kernel requires a custom build of pyodide that includes those packages.
 
-The Xeus-Python kernel *cannot* currently install additional packages at run time. However, additional packages may be installed for use by the Xues-Python at the JupyterLite site build time. If Pyhton package requirments are identified in advance of the publication of the JupyterLite site, the required packages can be built into the deployed Xeus-Python kernel.
+The Xeus-Python kernel *cannot* currently install additional packages at run time. However, additional packages may be installed for use by the Xeus-Python at the JupyterLite site build time. If Pyhton package requirments are identified in advance of the publication of the JupyterLite site, the required packages can be built into the deployed Xeus-Python kernel.
 
 The WebR kernel loads all its packages from a WebR repository on demand. However, if we publish a package repository wihtin the JupyterLite website (that is, rooted on the path we publish JupyteLite to), we can configure the WebR kernel to load the packages from there and make a *de facto* self-contained distribution.
 

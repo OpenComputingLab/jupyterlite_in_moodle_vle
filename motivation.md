@@ -13,7 +13,7 @@ Although the Jupyter user interface is typically accessed via a web browser, the
 - where is the user interface published from?
 - where is the code edited the user interface actually executed?
 
-Typically, both those considerations are handled by a Jupyter server running either on the student's own computer using self-installed software, or on a remotely hosted serve. Typically, Jupyter environments are made available to students:
+Typically, both those considerations are handled by a Jupyter server running either on the student's own computer using self-installed software, or on a remotely hosted server. Typically, Jupyter environments are made available to students:
 
 - via virtual computing environments (VCEs) on OU hosted servers (for example, Computer Home/[OpenComputing Lab (OCL)](https://docs.ocl.open.ac.uk/container-launcher/user/));
 - via locally run VCEs on students' own computers (e.g. using [Docker Desktop](https://docs.docker.com/desktop/));
@@ -52,6 +52,49 @@ In *TM112 Introduction to computing and information technology 2*, teaching and 
 ```{admonition} Jupyter Notebooks in M348
 An increasing number of modules in Maths and Science now make use of Jupyter notebooks to deliver computational activities. M348 uses notebooks run against an R kernel to perform a wide range of statistical analyses and generate a wide range statistical charts based on provided datasets. The ability to render maths formulae written in LaTeX in notebook markdown cells also means formulae can be rendered using a mathematical notation in explanatory, rather than computational, parts of the notebooks.
 ```
+
+## Supporting Students in Secure Environments (SiSE)
+
+Providing access to interactive computing activities for students in secure environments presents several additional challenges over and above those associated with the delivery of software based activities to mainstream students:
+
+- limited network access: depending on the SE and each particular student's personal situation, students may have:
+  - no access to the internet;
+  - limited network access (for example, to the OU `learn7` server);
+  - full access to the internet, subject to desktop computer management policies, firewall settings, content guards, etc.
+
+In addition, the student's physical access to a computer may be restricted to particular times and durations (for example, depending on when they can gain access to a learning center).
+
+- limited ability to install custom software:
+  - no permissions to install software onto a study computer;
+  - limited permissions to run, but not install, executable software packages (`.exe` files, "live" or "portable" applications run from a USB memory stick).
+
+### Perception of Risk
+
+When providing students with access to executiable coding environments, there is also the concern that students are not just running applications: *they are running environments that allow them __to write and execute code of their own devising__*. This means there is a perceived increase in risk in terms of:
+
+- can the student gain access to, and/or interact with, things on the local network they shouldn't normally have access to?
+- can the student gain access to, and/or interact with, things on the wider (external) network they shouldn't normally have access to?
+
+In short, *can the student mount attacks from within the coding environment on other users, services, or machines?*
+
+### Practicalities Associated With Working Inside a Secure Environment
+
+We might typically assume:
+
+- students are probably working on a Windows computer; *we might further assume a low specification computer, and a potentially dated version of Windows;*
+- students have access to Microsoft Office style tools;
+- students have access to a web browser;
+- firewalls and other forms of network access control limit what a student has access to; *if our system can access something it shouldn't, that is a wider concern for the SE*;
+- students are able to read and write common file types to an access controlled persistent file storage area (i.e. they can save their work to their own user account, and open it at a later date); *if our system can access something it shouldn't, that is a wider concern for the SE*.
+
+One solution to the above problems is to use a "sandboxed" environment, in which the programming code and the programming environment run "inside" an environment that is isolated from the rest of the operating system.
+
+### Example User Guides for Using JupyterLite in a Secure Environment
+
+Example user guides:
+
+- [M348 draft desktop guide, November, 2024 (PDF)](https://github.com/OpenComputingLab/jupyterlite_in_moodle_vle/blob/main/guides/M348-JupyterLite-Desktop-Guide.pdf)
+- [M348 draft guide, November, 2024 (PDF)](https://github.com/OpenComputingLab/jupyterlite_in_moodle_vle/blob/main/guides/M348-JupyterLite-Learn7-Guide.pdf)
 
 ## Notebook Activity Design Considerations
 

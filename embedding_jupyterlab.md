@@ -1,6 +1,8 @@
 # Embedding JupyterLab and Jupyter Notebook in Moodle VLE Pages
 
-A browser based JupyterLab enviroment can be embedded into a Moodle VLE page as an embedded URL, or bundled into an `HTML5.zip` activity that can either be rendered in an `HTML5` activity page, or embedded in a page rendered from OU-XML.
+A browser based JupyterLab enviroment can be embedded into a Moodle VLE page as an embedded URL, or bundled into an `HTML5.zip` activity that can either be rendered in an `HTML5` activity page, or embedded in a page rendered within the VLE.
+
+*All* the programming environment resources can be bundled inside an `HTML5` activity zipfile and uploaded to `learn7`, which means that no network requests outside the `learn7` domain are required.
 
 ## Uploading the HTML5.zip asset
 
