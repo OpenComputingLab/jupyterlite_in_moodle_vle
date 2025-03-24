@@ -12,7 +12,7 @@ Example GitHub repositories that build the html5.zip packages using GitHub Axcti
 
 The JupyterLite distribution is built using an action in [`ouseful-testing/jupyterlite-webr-kernel`](https://github.com/ouseful-testing/jupyterlite-webr-kernel); this constructs a custom web Jupyterlite kernel and then creates a JupyterLite distribution that makes use of it. The zipped distribution is uploaded as an action artefact and can be uploaded to Moodle as an HTML5.zip package.
 
-The jupyterlite-webr-kernel builds a self-contained web distribution with package and webr files distributed alongside the jupyterlite environment; the R packages are currently custom built in the [`ouseful-testing/webr-package-repo-demo`](https://github.com/ouseful-testing/webr-package-repo-demo) repo and then placed in the webr-package-repo-demo repo packages_wasmbuilt directory.
+The `jupyterlite-webr-kernel` repo is used to build a self-contained web distribution with R package and `webr` runtime files distributed alongside the jupyterlite environment; the R packages are currently custom built in the [`ouseful-testing/webr-package-repo-demo`](https://github.com/ouseful-testing/webr-package-repo-demo) repo and then placed in the `ouseful-testing/jupyterlite-webr-kernel` repo `packages_wasmbuilt` directory. *(The `webr-package-repo-demo` repo also serves as a public package repository for the custom packages, published using Github Pages.)*
 
 A desktop runnable bundled executable version is built using [`ouseful-testing/m348-jupyterlite-distro`](https://github.com/ouseful-testing/m348-jupyterlite-distro) and uploaded as the Action artefact `m348-jupyterlite-html5zip-distribution.zip`
 
