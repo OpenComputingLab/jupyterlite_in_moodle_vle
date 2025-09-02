@@ -6,6 +6,15 @@ Notebooks can be individually referenced via the `notebooks/index.html?path=NOTE
 
 ![Jupyter notebook embedded in VLE URL asset/resource page](images/example_embedded_notebook.png)
 
+To find the URL for an uploaded HTML5 asset:
+
+- open a page with an embedded JupyterLite environment;
+- in the JupyterlLite file browser, right click on a notebook and select "open in new browser tab"
+- this gives a URL of the form: `https://learn2.open.ac.uk/pluginfile.php/4382819/mod_htmlactivity/unpacked/8f70c41296881b6021a78ca8bc1ebb71d8798232/files/M348-code-tests.ipynb`
+- change the `/files/` path element to `/tree/index.html?path=` to get a link that we can use as an external URL
+- add a new Moodle *link* resource using the modified URL, e.g. something of the form `https://learn2.open.ac.uk/pluginfile.php/4382819/mod_htmlactivity/unpacked/8f70c41296881b6021a78ca8bc1ebb71d8798232/tree/index.html?path=M348-code-tests.ipynb`
+- in the resource *Appearance* setting: *Embed*
+
 In terms of learning material design, embedding a notebook within a VLE page allows us to maintain a flow of activity from VLE based web content directly into an interactive activity. This allows students to:
 
 - run code, either as presented, or modified or created by them, inline in the context of the surrounding materials;
